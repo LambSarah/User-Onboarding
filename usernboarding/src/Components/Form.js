@@ -10,7 +10,7 @@ const Form = () => {
       .email('Must provide a valid email address.')
       .required('Email is required.'),
     password: Yup.string()
-      .required('Password is required.')
+      .required('Password is  required.')
       .min(6, 'Passwords must contain at least 6 characters.'),
     terms: Yup.boolean().oneOf(
       [true],
@@ -67,7 +67,7 @@ const Form = () => {
   }, [errors]);
 
   return (
-    <form onSubmit={formSubmit}>
+    <form name='userForm' onSubmit={formSubmit}>
       <label htmlFor='nameInput'>
         Name{' '}
         <input
@@ -101,7 +101,7 @@ const Form = () => {
         Do you agree to our term of service ?{' '}
         <input id='termsInput' type='checkbox' name='terms' />{' '}
       </label>{' '}
-      <button> Submit </button>{' '}
+      <button id='submitForm'> Submit </button>{' '}
     </form>
   );
 };
